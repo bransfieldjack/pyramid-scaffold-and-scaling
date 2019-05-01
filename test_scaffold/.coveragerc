@@ -1,0 +1,3 @@
+[run]
+source = test_scaffold
+omit = test_scaffold/test*
