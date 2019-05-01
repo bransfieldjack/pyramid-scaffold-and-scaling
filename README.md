@@ -51,6 +51,8 @@ If you have followed the above, paste the url into your browser and hit enter, y
 
 ![starter_scaffold](https://s3-ap-southeast-1.amazonaws.com/python-pyramid/pyramid_starter_scaffold.PNG)
 
+## Configuration
+
 The most important file in our scaffold is (no surprises) '__init__.py'.
 The file contains the configuration and similarly to Django it uses WSGI. 
 The contents look like:
@@ -71,7 +73,7 @@ def main(global_config, **settings):
 
 ```
 
-Next up, Views!
+## Next up, Views!
 
 Use the following command check which routes have already been defined:
 
@@ -95,3 +97,22 @@ You can also check production.ini:
 ```
 proutes production.ini
 ```
+
+The result:
+
+```
+Name         Pattern             View                           Method    
+----         -------             ----                           ------    
+__static/    /static/*subpath    test_scaffold:static/          *         
+home         /                   test_scaffold.views.my_view    *         
+```
+
+Finally, we can check the routes for our views using:
+
+```
+pviews development.ini /
+```
+
+## How to add a views
+
+
