@@ -70,3 +70,28 @@ def main(global_config, **settings):
     return config.make_wsgi_app()
 
 ```
+
+Next up, Views!
+
+Use the following command check which routes have already been defined:
+
+```
+proutes development.ini
+```
+
+You should have something similer returend:
+
+```
+Name                         Pattern                            View                            Method    
+----                         -------                            ----                            ------    
+__static/                    /static/*subpath                   test_scaffold:static/           *         
+home                         /                                  test_scaffold.views.my_view     *         
+debugtoolbar                 /_debug_toolbar/*subpath           <unknown>                       *         
+__/_debug_toolbar/static/    /_debug_toolbar/static/*subpath    pyramid_debugtoolbar:static/    *      
+```
+
+You can also check production.ini:
+
+```
+proutes production.ini
+```
