@@ -1,5 +1,7 @@
 # Python Pyramid Basic Scaffold + Advanced testing
 
+![pyramid](https://s3-ap-southeast-1.amazonaws.com/python-pyramid/pyramid.jpg)
+
 ## Setup
 
 Install the pyramid package:
