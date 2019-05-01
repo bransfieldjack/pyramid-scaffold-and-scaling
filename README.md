@@ -50,3 +50,23 @@ listen = xxx-x-x-xxx-xx.ap-southeast-1.compute.amazonaws.com:6543
 If you have followed the above, paste the url into your browser and hit enter, you should get the following templated page:
 
 ![starter_scaffold](https://s3-ap-southeast-1.amazonaws.com/python-pyramid/pyramid_starter_scaffold.PNG)
+
+The most important file in our scaffold is (no surprises) '__init__.py'.
+The file contains the configuration and similarly to Django it uses WSGI. 
+The contents look like:
+
+```
+from pyramid.config import Configurator
+
+
+def main(global_config, **settings):
+    """ This function returns a Pyramid WSGI application.
+    """
+    config = Configurator(settings=settings)
+    config.include('pyramid_jinja2')
+    config.add_static_view('static', 'static', cache_max_age=3600)
+    config.add_route('home', '/')
+    config.scan()
+    return config.make_wsgi_app()
+
+```
